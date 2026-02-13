@@ -53,7 +53,8 @@ const TodoListMobX = observer(() => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <Card variant="default" className={`w-full max-w-md ${todoStore.todos.length < 5 ? "h-auto" : "h-110" } rounded-xl shadow-lg p-6 flex flex-col`}>
-        <Card.Title ref={textRef} className="text-2xl font-bold text-center mb-4">To-Do List (CI / CD Added)</Card.Title>
+        <Card.Title ref={textRef} className="text-2xl font-bold text-center mb-4">To-Do List</Card.Title>
+        <Card.Title ref={textRef} className="text-2xl font-bold text-center mb-4">CI/CD Added</Card.Title>
         <Card.Description className="flex gap-2 mb-4">
           <Input ref={inputRef} variant="secondary" type="text" placeholder="Add a new task..." className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" value={task} onChange={(e) => setTask(e.target.value)}
           />
