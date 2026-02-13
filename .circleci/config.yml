@@ -11,8 +11,7 @@ jobs:
       - run:
           name: Deploy to Vercel
           command: |
-            npm install -g vercel
-            vercel --prod --yes --token=$VERCEL_TOKEN
+            npx vercel --prod --yes --token=$VERCEL_TOKEN
 
 workflows:
   version: 2
