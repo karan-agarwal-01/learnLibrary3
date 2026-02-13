@@ -1,16 +1,24 @@
 version: 2.1
 
 jobs:
-  build:
+  build_and_deploy:
     docker:
       - image: cimg/node:20.0
     steps:
       - checkout
       - run: npm install
       - run: npm run build
+      - run:
+          name: Deploy to Vercel
+          command: |
+            npm install -g vercel
+            vercel --prod --yes --token=$VERCEL_TOKEN
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - build_and_deploy:
+          filters:
+            branches:
+              only: main
